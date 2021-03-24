@@ -1,0 +1,30 @@
+{% extends 'common.html' %}
+{% load static %}
+
+{% block head %}
+<title>Login</title>
+{% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet"  href="{% static 'css/signin.css' %}">
+
+
+  <main class="form-signin" style="margin-top: 25px;">
+    <a type="button" class="btn-close" style="margin-bottom: 20px;margin-left: 285px;" href="/" aria-label="Close"></a>
+    <form method="post" action="{% url 'base' %}">
+      {% csrf_token %}
+      <h1 class="h3 mb-3 fw-normal" style="text-align: center;color: rgb(167, 80, 49);">Log In</h1>
+      <label for="inputEmail" class="visually-hidden">Username</label>
+      <input type="text" id="inputEmail" name="username" class="form-control" placeholder="Username" required autofocus>
+      <label for="inputPassword" class="visually-hidden">Password</label>
+      <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+  
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Log In</button>
+
+    </form>
+  </main>
+
+
+
+{% endblock %}
